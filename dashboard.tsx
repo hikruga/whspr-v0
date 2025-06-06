@@ -1,9 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Search, Menu, User, TrendingUp } from "lucide-react"
+import { Menu, User, TrendingUp, Activity } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { CoinDetailModal } from "./components/coin-detail-modal"
@@ -65,16 +64,6 @@ export default function Component() {
             </div>
           </div>
 
-          <div className="flex-1 max-w-md mx-8">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-cyan-400" />
-              <Input
-                placeholder="What trends are you looking for?"
-                className="pl-10 bg-black border-cyan-500/50 text-white placeholder-gray-400 focus:border-cyan-400 focus:shadow-lg focus:shadow-cyan-500/20"
-              />
-            </div>
-          </div>
-
           <Button
             variant="ghost"
             size="icon"
@@ -86,6 +75,22 @@ export default function Component() {
 
         {/* Main Content */}
         <div className="p-4 main-container">
+          {/* Monitors Section */}
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <Activity className="h-6 w-6 text-cyan-400" />
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Monitors
+              </h1>
+            </div>
+            <div className="bg-black/60 border border-cyan-500/20 rounded-lg p-4 backdrop-blur-[0.5rem] shadow-lg shadow-cyan-500/10">
+              <p className="text-gray-300 text-sm leading-relaxed">
+                WHSPR monitors are carefully curated lists of coins we are tracking. Each monitor focuses on specific
+                market patterns and opportunities to help you stay ahead of the curve.
+              </p>
+            </div>
+          </div>
+
           {/* Top Widgets Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             {/* Top Gainers */}
@@ -109,136 +114,234 @@ export default function Component() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0 px-3 pb-3">
-                <div className="h-48 overflow-y-auto custom-scrollbar green-scroll space-y-2">
+                <div className="h-56 overflow-y-auto custom-scrollbar space-y-2">
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
-                    onClick={() => handleCoinClick("pig wif hat")}
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
+                    onClick={() => handleCoinClick("$KILLBILL")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
-                          src="/images/pigwifhat.png"
-                          alt="pig wif hat"
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-9JRY3Mxw2fB4DebD3gvEJTHTOeJHRk.png"
+                          alt="KILLBILL"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #34D399", boxShadow: "0 0 5px rgba(52, 211, 153, 0.5)" }}
+                          style={{ border: "4px solid #34D399", boxShadow: "0 0 7px rgba(52, 211, 153, 0.5)" }}
                         />
                       </div>
-                      <span className="text-xs text-white">pig wif hat</span>
+                      <div className="flex flex-col">
+                        <span className="text-xs text-white font-semibold">$KILLBILL</span>
+                        <span className="text-xs text-gray-400">Kill Bill</span>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-xs text-green-400 font-semibold">$0.0007576</div>
-                      <div className="text-xs text-green-400 font-bold">+965.56%</div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-right">
+                        <div className="text-xs text-white font-semibold">$0.00</div>
+                        <div className="text-xs text-green-400 font-bold">+21.2%</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400">MC</div>
+                        <div className="text-xs text-cyan-400 font-semibold">$3.3M</div>
+                      </div>
+                      <button className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700/50 rounded-lg text-gray-300 font-semibold transition-all duration-200 text-xs">
+                        Trade
+                      </button>
                     </div>
                   </div>
+
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
-                    onClick={() => handleCoinClick("TRUMP DOGS")}
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
+                    onClick={() => handleCoinClick("$MASK")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
-                          src="/images/trumpdogs.png"
-                          alt="TRUMP DOGS"
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xTqCUgyMuwfVYeFdR7JKOp0V9OZhjc.png"
+                          alt="MASK"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #34D399", boxShadow: "0 0 5px rgba(52, 211, 153, 0.5)" }}
+                          style={{ border: "4px solid #34D399", boxShadow: "0 0 7px rgba(52, 211, 153, 0.5)" }}
                         />
                       </div>
-                      <span className="text-xs text-white">TRUMP DOGS</span>
+                      <div className="flex flex-col">
+                        <span className="text-xs text-white font-semibold">$MASK</span>
+                        <span className="text-xs text-gray-400">catwifmask</span>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-xs text-green-400 font-semibold">$0.0004463</div>
-                      <div className="text-xs text-green-400 font-bold">+368.32%</div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-right">
+                        <div className="text-xs text-white font-semibold">$0.02</div>
+                        <div className="text-xs text-green-400 font-bold">+23.99%</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400">MC</div>
+                        <div className="text-xs text-cyan-400 font-semibold">$22.1M</div>
+                      </div>
+                      <button className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700/50 rounded-lg text-gray-300 font-semibold transition-all duration-200 text-xs">
+                        Trade
+                      </button>
                     </div>
                   </div>
+
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
-                    onClick={() => handleCoinClick("Trump Dinner")}
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
+                    onClick={() => handleCoinClick("$MBTC")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
-                          src="/images/trumpdinner.png"
-                          alt="Trump Dinner"
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1MaQcsKXzZnzL9afY2643Dlb7f5Lny.png"
+                          alt="MBTC"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #34D399", boxShadow: "0 0 5px rgba(52, 211, 153, 0.5)" }}
+                          style={{ border: "4px solid #EF4444", boxShadow: "0 0 7px rgba(239, 68, 68, 0.5)" }}
                         />
                       </div>
-                      <span className="text-xs text-white">Trump Dinner</span>
+                      <div className="flex flex-col">
+                        <span className="text-xs text-white font-semibold">$MBTC</span>
+                        <span className="text-xs text-gray-400">Wrapped BTC (Morahole)</span>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-xs text-green-400 font-semibold">$0.000318</div>
-                      <div className="text-xs text-green-400 font-bold">+346.06%</div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-right">
+                        <div className="text-xs text-white font-semibold">$103,419.77</div>
+                        <div className="text-xs text-red-400 font-bold">-1.95%</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400">MC</div>
+                        <div className="text-xs text-cyan-400 font-semibold">$379.2M</div>
+                      </div>
+                      <button className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700/50 rounded-lg text-gray-300 font-semibold transition-all duration-200 text-xs">
+                        Trade
+                      </button>
                     </div>
                   </div>
+
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
+                    onClick={() => handleCoinClick("$Bonk")}
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Y3NJqPEq0RceGjVf008N8rVuhf8Uxz.png"
+                          alt="Bonk"
+                          className="w-full h-full object-cover"
+                          style={{ border: "4px solid #EF4444", boxShadow: "0 0 7px rgba(239, 68, 68, 0.5)" }}
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-xs text-white font-semibold">$Bonk</span>
+                        <span className="text-xs text-gray-400">Bonk</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-right">
+                        <div className="text-xs text-white font-semibold">$0.00</div>
+                        <div className="text-xs text-red-400 font-bold">-5.93%</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400">MC</div>
+                        <div className="text-xs text-cyan-400 font-semibold">$1.4B</div>
+                      </div>
+                      <button className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700/50 rounded-lg text-gray-300 font-semibold transition-all duration-200 text-xs">
+                        Trade
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
+                    onClick={() => handleCoinClick("$CULTS")}
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ptQjpixxwPt6HhwGynUTdHaPn53Vah.png"
+                          alt="CULTS"
+                          className="w-full h-full object-cover"
+                          style={{ border: "4px solid #34D399", boxShadow: "0 0 7px rgba(52, 211, 153, 0.5)" }}
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-xs text-white font-semibold">$CULTS</span>
+                        <span className="text-xs text-gray-400">CULTS</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-right">
+                        <div className="text-xs text-white font-semibold">$0.00</div>
+                        <div className="text-xs text-green-400 font-bold">+169.77%</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400">MC</div>
+                        <div className="text-xs text-cyan-400 font-semibold">$1.4M</div>
+                      </div>
+                      <button className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700/50 rounded-lg text-gray-300 font-semibold transition-all duration-200 text-xs">
+                        Trade
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("PEPE")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-green-400 shadow-lg shadow-green-500/30">
-                        <AvatarFallback className="bg-gradient-to-br from-green-400 to-green-600 text-xs text-black font-bold">
-                          P
-                        </AvatarFallback>
-                      </Avatar>
-                      <span className="text-xs text-white">PEPE</span>
+                      <div className="w-10 h-10 rounded-full overflow-hidden border border-green-400 shadow-lg shadow-green-500/30">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-BbodFqJOPhaRNCpn00UUIHaYMBD0K5.png"
+                          alt="PEPE"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-xs text-white font-semibold">PEPE</span>
+                        <span className="text-xs text-gray-400">Pepe</span>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-xs text-green-400 font-semibold">$0.000018</div>
-                      <div className="text-xs text-green-400 font-bold">+215.23%</div>
-                    </div>
-                  </div>
-                  <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
-                    onClick={() => handleCoinClick("SHIB")}
-                  >
-                    <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-orange-400 shadow-lg shadow-orange-500/30">
-                        <AvatarFallback className="bg-gradient-to-br from-orange-400 to-orange-600 text-xs text-black font-bold">
-                          S
-                        </AvatarFallback>
-                      </Avatar>
-                      <span className="text-xs text-white">SHIB</span>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-green-400 font-semibold">$0.000024</div>
-                      <div className="text-xs text-green-400 font-bold">+158.45%</div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-right">
+                        <div className="text-xs text-white font-semibold">$0.000018</div>
+                        <div className="text-xs text-green-400 font-bold">+215.23%</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400">MC</div>
+                        <div className="text-xs text-cyan-400 font-semibold">$7.8B</div>
+                      </div>
+                      <button className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700/50 rounded-lg text-gray-300 font-semibold transition-all duration-200 text-xs">
+                        Trade
+                      </button>
                     </div>
                   </div>
+
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
-                    onClick={() => handleCoinClick("DOGE")}
-                  >
-                    <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-blue-400 shadow-lg shadow-blue-500/30">
-                        <AvatarFallback className="bg-gradient-to-br from-blue-400 to-blue-600 text-xs text-black font-bold">
-                          D
-                        </AvatarFallback>
-                      </Avatar>
-                      <span className="text-xs text-white">DOGE</span>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-green-400 font-semibold">$0.11218</div>
-                      <div className="text-xs text-green-400 font-bold">+112.77%</div>
-                    </div>
-                  </div>
-                  <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("unstable coin")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
-                          src="/images/unstablecoin.png"
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-iEtQhAD847FkVheivAQUxLGXrfK0SY.png"
                           alt="unstable coin"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #34D399", boxShadow: "0 0 5px rgba(52, 211, 153, 0.5)" }}
+                          style={{ border: "4px solid #34D399", boxShadow: "0 0 7px rgba(52, 211, 153, 0.5)" }}
                         />
                       </div>
-                      <span className="text-xs text-white">unstable coin</span>
+                      <div className="flex flex-col">
+                        <span className="text-xs text-white font-semibold">unstable coin</span>
+                        <span className="text-xs text-gray-400">Unstable</span>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-xs text-green-400 font-semibold">$0.000526</div>
-                      <div className="text-xs text-green-400 font-bold">+86.73%</div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-right">
+                        <div className="text-xs text-white font-semibold">$0.000526</div>
+                        <div className="text-xs text-green-400 font-bold">+86.73%</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-400">MC</div>
+                        <div className="text-xs text-cyan-400 font-semibold">$52.6M</div>
+                      </div>
+                      <button className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-gray-700/50 rounded-lg text-gray-300 font-semibold transition-all duration-200 text-xs">
+                        Trade
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -251,15 +354,15 @@ export default function Component() {
                 <CardTitle className="text-sm text-cyan-400 flex items-center gap-2 font-semibold">
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <span className="cursor-default">Coin of the Day</span>
+                      <span className="cursor-default">Strong Survivors</span>
                     </TooltipTrigger>
                     <TooltipContent
                       side="top"
                       className="max-w-xs bg-black border border-cyan-500/30 shadow-lg shadow-cyan-500/20 text-cyan-400"
                     >
                       <p className="text-sm text-cyan-300">
-                        Featured projects and platforms that are trending today. Highlights innovative DeFi protocols,
-                        exchanges, and tools gaining significant attention in the crypto space.
+                        Coins launched 2+ days ago that maintain steady volume, holder growth, or price accumulation —
+                        indicating long-term interest and potential staying power beyond early hype.
                       </p>
                     </TooltipContent>
                   </Tooltip>
@@ -267,52 +370,52 @@ export default function Component() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0 px-3 pb-3">
-                <div className="h-48 overflow-y-auto custom-scrollbar cyan-scroll space-y-2">
+                <div className="h-56 overflow-y-auto custom-scrollbar space-y-2">
                   <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full shadow-lg shadow-purple-500/30"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full shadow-lg shadow-purple-500/30"></div>
                       <span className="text-xs text-white">Bubblemaps</span>
                     </div>
                     <span className="text-xs text-purple-400">Today</span>
                   </div>
                   <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-green-400 to-green-600 rounded-full shadow-lg shadow-green-500/30"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full shadow-lg shadow-green-500/30"></div>
                       <span className="text-xs text-white">Launch On Pump</span>
                     </div>
                     <span className="text-xs text-green-400">1d ago</span>
                   </div>
                   <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-cyan-500/10 to-transparent border border-cyan-500/20">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full shadow-lg shadow-cyan-500/30"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full shadow-lg shadow-cyan-500/30"></div>
                       <span className="text-xs text-white">PancakeSwap</span>
                     </div>
                     <span className="text-xs text-cyan-400">2d ago</span>
                   </div>
                   <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-yellow-500/10 to-transparent border border-yellow-500/20">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg shadow-yellow-500/30"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg shadow-yellow-500/30"></div>
                       <span className="text-xs text-white">Uniswap V3</span>
                     </div>
                     <span className="text-xs text-yellow-400">3d ago</span>
                   </div>
                   <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full shadow-lg shadow-pink-500/30"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full shadow-lg shadow-pink-500/30"></div>
                       <span className="text-xs text-white">SushiSwap</span>
                     </div>
                     <span className="text-xs text-pink-400">4d ago</span>
                   </div>
                   <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full shadow-lg shadow-indigo-500/30"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full shadow-lg shadow-indigo-500/30"></div>
                       <span className="text-xs text-white">1inch Network</span>
                     </div>
                     <span className="text-xs text-indigo-400">5d ago</span>
                   </div>
                   <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-red-400 to-red-600 rounded-full shadow-lg shadow-red-500/30"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-red-400 to-red-600 rounded-full shadow-lg shadow-red-500/30"></div>
                       <span className="text-xs text-white">Curve Finance</span>
                     </div>
                     <span className="text-xs text-red-400">6d ago</span>
@@ -342,13 +445,13 @@ export default function Component() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0 px-3 pb-3">
-                <div className="h-48 overflow-y-auto custom-scrollbar pink-scroll space-y-2">
+                <div className="h-56 overflow-y-auto custom-scrollbar space-y-2">
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("$BEAR")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden border-2 border-pink-400">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border-4 border-pink-400">
                         <img src="/images/brown-bear.png" alt="BEAR" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs text-white">$BEAR</span>
@@ -359,11 +462,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("$ADHD")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden border-2 border-pink-400">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border-4 border-pink-400">
                         <img src="/images/adhd-logo.png" alt="ADHD" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs text-white">$ADHD</span>
@@ -374,11 +477,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("$KITTY")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden border-2 border-pink-400">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border-4 border-pink-400">
                         <img src="/images/hello-kitty.png" alt="KITTY" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs text-white">$KITTY</span>
@@ -389,11 +492,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("$ROBOT")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden border-2 border-pink-400">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border-4 border-pink-400">
                         <img src="/images/robot-face.png" alt="ROBOT" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs text-white">$ROBOT</span>
@@ -404,11 +507,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("$YARD")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden border-2 border-pink-400">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border-4 border-pink-400">
                         <img src="/images/dogs-yard.png" alt="YARD" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs text-white">$YARD</span>
@@ -419,11 +522,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("$NERD")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden border-2 border-pink-400">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border-4 border-pink-400">
                         <img src="/images/glasses-guy.png" alt="NERD" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs text-white">$NERD</span>
@@ -434,11 +537,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 cursor-pointer hover:bg-pink-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("$DOTS")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden border-2 border-pink-400">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border-4 border-pink-400">
                         <img src="/images/dot-pattern.png" alt="DOTS" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs text-white">$DOTS</span>
@@ -473,118 +576,118 @@ export default function Component() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0 px-3 pb-3">
-                <div className="h-48 overflow-y-auto custom-scrollbar indigo-scroll space-y-2">
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
+                <div className="h-56 overflow-y-auto custom-scrollbar space-y-2">
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #EC4899, #F472B6)",
-                          border: "2px solid #EC4899",
-                          boxShadow: "0 0 5px rgba(236, 72, 153, 0.5)",
-                        }}
-                      >
-                        <span className="text-white font-bold text-xs">AI</span>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-KyhfxYrc9hPylHFolnYO9J4AHFAsgZ.png"
+                          alt="AI"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <span className="text-sm text-white">AI</span>
                     </div>
-                    <span className="text-xs text-green-400 font-bold">+24.3%</span>
+                    <div className="text-right">
+                      <div className="text-xs text-indigo-400 font-semibold">$0.00234</div>
+                      <div className="text-xs text-green-400 font-bold">+24.3%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #EC4899, #F472B6)",
-                          border: "2px solid #EC4899",
-                          boxShadow: "0 0 5px rgba(236, 72, 153, 0.5)",
-                        }}
-                      >
-                        <span className="text-white font-bold text-xs">M</span>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xTqCUgyMuwfVYeFdR7JKOp0V9OZhjc.png"
+                          alt="Memes"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <span className="text-sm text-white">Memes</span>
                     </div>
-                    <span className="text-xs text-green-400 font-bold">+18.7%</span>
+                    <div className="text-right">
+                      <div className="text-xs text-indigo-400 font-semibold">$0.00156</div>
+                      <div className="text-xs text-green-400 font-bold">+18.7%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #EC4899, #F472B6)",
-                          border: "2px solid #EC4899",
-                          boxShadow: "0 0 5px rgba(236, 72, 153, 0.5)",
-                        }}
-                      >
-                        <span className="text-white font-bold text-xs">P</span>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1MaQcsKXzZnzL9afY2643Dlb7f5Lny.png"
+                          alt="Political"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <span className="text-sm text-white">Political</span>
                     </div>
-                    <span className="text-xs text-green-400 font-bold">+12.1%</span>
+                    <div className="text-right">
+                      <div className="text-xs text-indigo-400 font-semibold">$0.00089</div>
+                      <div className="text-xs text-green-400 font-bold">+12.1%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #EC4899, #F472B6)",
-                          border: "2px solid #EC4899",
-                          boxShadow: "0 0 5px rgba(236, 72, 153, 0.5)",
-                        }}
-                      >
-                        <span className="text-white font-bold text-xs">G</span>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-9JRY3Mxw2fB4DebD3gvEJTHTOeJHRk.png"
+                          alt="Gaming"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <span className="text-sm text-white">Gaming</span>
                     </div>
-                    <span className="text-xs text-green-400 font-bold">+9.8%</span>
+                    <div className="text-right">
+                      <div className="text-xs text-indigo-400 font-semibold">$0.00067</div>
+                      <div className="text-xs text-green-400 font-bold">+9.8%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #EC4899, #F472B6)",
-                          border: "2px solid #EC4899",
-                          boxShadow: "0 0 5px rgba(236, 72, 153, 0.5)",
-                        }}
-                      >
-                        <span className="text-white font-bold text-xs">D</span>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Y3NJqPEq0RceGjVf008N8rVuhf8Uxz.png"
+                          alt="DeFi"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <span className="text-sm text-white">DeFi</span>
                     </div>
-                    <span className="text-xs text-green-400 font-bold">+7.4%</span>
+                    <div className="text-right">
+                      <div className="text-xs text-indigo-400 font-semibold">$0.00123</div>
+                      <div className="text-xs text-green-400 font-bold">+7.4%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #EC4899, #F472B6)",
-                          border: "2px solid #EC4899",
-                          boxShadow: "0 0 5px rgba(236, 72, 153, 0.5)",
-                        }}
-                      >
-                        <span className="text-white font-bold text-xs">N</span>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ptQjpixxwPt6HhwGynUTdHaPn53Vah.png"
+                          alt="NFT"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <span className="text-sm text-white">NFT</span>
                     </div>
-                    <span className="text-xs text-green-400 font-bold">+5.2%</span>
+                    <div className="text-right">
+                      <div className="text-xs text-indigo-400 font-semibold">$0.00045</div>
+                      <div className="text-xs text-green-400 font-bold">+5.2%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #EC4899, #F472B6)",
-                          border: "2px solid #EC4899",
-                          boxShadow: "0 0 5px rgba(236, 72, 153, 0.5)",
-                        }}
-                      >
-                        <span className="text-white font-bold text-xs">L</span>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-iEtQhAD847FkVheivAQUxLGXrfK0SY.png"
+                          alt="Layer 2"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <span className="text-sm text-white">Layer 2</span>
                     </div>
-                    <span className="text-xs text-green-400 font-bold">+3.9%</span>
+                    <div className="text-right">
+                      <div className="text-xs text-indigo-400 font-semibold">$0.00078</div>
+                      <div className="text-xs text-green-400 font-bold">+3.9%</div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -614,13 +717,13 @@ export default function Component() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="max-h-48 overflow-y-auto custom-scrollbar blue-scroll space-y-3">
+                <div className="max-h-56 overflow-y-auto custom-scrollbar space-y-3">
                   <div
-                    className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("DOGE")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-blue-400 shadow-lg shadow-blue-500/30">
+                      <Avatar className="w-10 h-10 border border-blue-400 shadow-lg shadow-blue-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-blue-400 to-blue-600 text-xs text-black font-bold">
                           D
                         </AvatarFallback>
@@ -630,11 +733,11 @@ export default function Component() {
                     <span className="text-xs text-blue-400 font-bold">1</span>
                   </div>
                   <div
-                    className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("SHIB")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-orange-400 shadow-lg shadow-orange-500/30">
+                      <Avatar className="w-10 h-10 border border-orange-400 shadow-lg shadow-orange-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-orange-400 to-orange-600 text-xs text-black font-bold">
                           S
                         </AvatarFallback>
@@ -644,11 +747,11 @@ export default function Component() {
                     <span className="text-xs text-blue-400 font-bold">2</span>
                   </div>
                   <div
-                    className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("PEPE")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-green-400 shadow-lg shadow-green-500/30">
+                      <Avatar className="w-10 h-10 border border-green-400 shadow-lg shadow-green-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-green-400 to-green-600 text-xs text-black font-bold">
                           P
                         </AvatarFallback>
@@ -658,16 +761,16 @@ export default function Component() {
                     <span className="text-xs text-blue-400 font-bold">3</span>
                   </div>
                   <div
-                    className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("pig wif hat")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
                           src="/images/pigwifhat.png"
                           alt="pig wif hat"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #3B82F6", boxShadow: "0 0 5px rgba(59, 130, 246, 0.5)" }}
+                          style={{ border: "4px solid #3B82F6", boxShadow: "0 0 7px rgba(59, 130, 246, 0.5)" }}
                         />
                       </div>
                       <span className="text-xs text-white">pig wif hat</span>
@@ -675,16 +778,16 @@ export default function Component() {
                     <span className="text-xs text-blue-400 font-bold">4</span>
                   </div>
                   <div
-                    className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("TRUMP DOGS")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
                           src="/images/trumpdogs.png"
                           alt="TRUMP DOGS"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #3B82F6", boxShadow: "0 0 5px rgba(59, 130, 246, 0.5)" }}
+                          style={{ border: "4px solid #3B82F6", boxShadow: "0 0 7px rgba(59, 130, 246, 0.5)" }}
                         />
                       </div>
                       <span className="text-xs text-white">TRUMP DOGS</span>
@@ -692,16 +795,16 @@ export default function Component() {
                     <span className="text-xs text-blue-400 font-bold">5</span>
                   </div>
                   <div
-                    className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("Trump Dinner")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
                           src="/images/trumpdinner.png"
                           alt="Trump Dinner"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #3B82F6", boxShadow: "0 0 5px rgba(59, 130, 246, 0.5)" }}
+                          style={{ border: "4px solid #3B82F6", boxShadow: "0 0 7px rgba(59, 130, 246, 0.5)" }}
                         />
                       </div>
                       <span className="text-xs text-white">Trump Dinner</span>
@@ -709,16 +812,16 @@ export default function Component() {
                     <span className="text-xs text-blue-400 font-bold">6</span>
                   </div>
                   <div
-                    className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 cursor-pointer hover:bg-blue-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("unstable coin")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
                           src="/images/unstablecoin.png"
                           alt="unstable coin"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #3B82F6", boxShadow: "0 0 5px rgba(59, 130, 246, 0.5)" }}
+                          style={{ border: "4px solid #3B82F6", boxShadow: "0 0 7px rgba(59, 130, 246, 0.5)" }}
                         />
                       </div>
                       <span className="text-xs text-white">unstable coin</span>
@@ -750,18 +853,18 @@ export default function Component() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0 px-3 pb-3">
-                <div className="h-48 overflow-y-auto custom-scrollbar purple-scroll space-y-2">
+                <div className="h-56 overflow-y-auto custom-scrollbar space-y-2">
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("unstable coin")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
                           src="/images/unstablecoin.png"
                           alt="unstable coin"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #A855F7", boxShadow: "0 0 5px rgba(168, 85, 247, 0.5)" }}
+                          style={{ border: "4px solid #A855F7", boxShadow: "0 0 7px rgba(168, 85, 247, 0.5)" }}
                         />
                       </div>
                       <span className="text-xs text-white">unstable coin</span>
@@ -772,16 +875,16 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("pig wif hat")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
                           src="/images/pigwifhat.png"
                           alt="pig wif hat"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #A855F7", boxShadow: "0 0 5px rgba(168, 85, 247, 0.5)" }}
+                          style={{ border: "4px solid #A855F7", boxShadow: "0 0 7px rgba(168, 85, 247, 0.5)" }}
                         />
                       </div>
                       <span className="text-xs text-white">pig wif hat</span>
@@ -792,11 +895,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("PEPE")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-purple-400 shadow-lg shadow-purple-500/30">
+                      <Avatar className="w-10 h-10 border border-purple-400 shadow-lg shadow-purple-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-purple-400 to-purple-600 text-xs text-black font-bold">
                           P
                         </AvatarFallback>
@@ -809,11 +912,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("SHIB")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-purple-400 shadow-lg shadow-purple-500/30">
+                      <Avatar className="w-10 h-10 border border-purple-400 shadow-lg shadow-purple-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-purple-400 to-purple-600 text-xs text-black font-bold">
                           S
                         </AvatarFallback>
@@ -826,11 +929,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("DOGE")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-purple-400 shadow-lg shadow-purple-500/30">
+                      <Avatar className="w-10 h-10 border border-purple-400 shadow-lg shadow-purple-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-purple-400 to-purple-600 text-xs text-black font-bold">
                           D
                         </AvatarFallback>
@@ -843,16 +946,16 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("TRUMP DOGS")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
                           src="/images/trumpdogs.png"
                           alt="TRUMP DOGS"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #A855F7", boxShadow: "0 0 5px rgba(168, 85, 247, 0.5)" }}
+                          style={{ border: "4px solid #A855F7", boxShadow: "0 0 7px rgba(168, 85, 247, 0.5)" }}
                         />
                       </div>
                       <span className="text-xs text-white">TRUMP DOGS</span>
@@ -863,16 +966,16 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 cursor-pointer hover:bg-purple-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("Pepes Dog")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
                           src="/images/pepesdog.png"
                           alt="Pepes Dog"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #A855F7", boxShadow: "0 0 5px rgba(168, 85, 247, 0.5)" }}
+                          style={{ border: "4px solid #A855F7", boxShadow: "0 0 7px rgba(168, 85, 247, 0.5)" }}
                         />
                       </div>
                       <span className="text-xs text-white">Pepes Dog</span>
@@ -907,118 +1010,125 @@ export default function Component() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="max-h-48 overflow-y-auto custom-scrollbar orange-scroll space-y-3">
-                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
+                <div className="max-h-56 overflow-y-auto custom-scrollbar space-y-3">
+                  <div className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #F97316, #FB923C)",
-                          border: "2px solid #F97316",
-                          boxShadow: "0 0 5px rgba(249, 115, 22, 0.5)",
-                        }}
-                      >
-                        <span className="text-black font-bold text-xs">DT</span>
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
+                        <img
+                          src="/images/trump-token.png"
+                          alt="Donald Trump"
+                          className="w-full h-full object-cover"
+                          style={{ border: "4px solid #F97316", boxShadow: "0 0 7px rgba(249, 115, 22, 0.5)" }}
+                        />
                       </div>
                       <span className="text-xs text-white">Donald Trump</span>
                     </div>
-                    <span className="text-xs text-orange-400 font-semibold">760.8M</span>
+                    <div className="text-right">
+                      <div className="text-xs text-orange-400 font-semibold">$0.00023</div>
+                      <div className="text-xs text-red-400 font-bold">-58.7%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
+                  <div className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #F97316, #FB923C)",
-                          border: "2px solid #F97316",
-                          boxShadow: "0 0 5px rgba(249, 115, 22, 0.5)",
-                        }}
-                      >
-                        <span className="text-black font-bold text-xs">D</span>
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
+                        <img
+                          src="/images/doge-alt.png"
+                          alt="doge"
+                          className="w-full h-full object-cover"
+                          style={{ border: "4px solid #F97316", boxShadow: "0 0 7px rgba(249, 115, 22, 0.5)" }}
+                        />
                       </div>
                       <span className="text-xs text-white">doge</span>
                     </div>
-                    <span className="text-xs text-orange-400 font-semibold">326.42M</span>
+                    <div className="text-right">
+                      <div className="text-xs text-orange-400 font-semibold">$0.00008</div>
+                      <div className="text-xs text-red-400 font-bold">-52.3%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
+                  <div className="flex items-centerr justify-between p-2.5 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #F97316, #FB923C)",
-                          border: "2px solid #F97316",
-                          boxShadow: "0 0 5px rgba(249, 115, 22, 0.5)",
-                        }}
-                      >
-                        <span className="text-black font-bold text-xs">L1</span>
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
+                        <img
+                          src="/images/layer1-token.png"
+                          alt="Layer 1"
+                          className="w-full h-full object-cover"
+                          style={{ border: "4px solid #F97316", boxShadow: "0 0 7px rgba(249, 115, 22, 0.5)" }}
+                        />
                       </div>
                       <span className="text-xs text-white">Layer 1</span>
                     </div>
-                    <span className="text-xs text-orange-400 font-semibold">223.86M</span>
+                    <div className="text-right">
+                      <div className="text-xs text-orange-400 font-semibold">$0.00145</div>
+                      <div className="text-xs text-red-400 font-bold">-47.9%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
+                  <div className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #F97316, #FB923C)",
-                          border: "2px solid #F97316",
-                          boxShadow: "0 0 5px rgba(249, 115, 22, 0.5)",
-                        }}
-                      >
-                        <span className="text-black font-bold text-xs">B</span>
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
+                        <img
+                          src="/images/bitcoin-alt.png"
+                          alt="Bitcoin"
+                          className="w-full h-full object-cover"
+                          style={{ border: "4px solid #F97316", boxShadow: "0 0 7px rgba(249, 115, 22, 0.5)" }}
+                        />
                       </div>
                       <span className="text-xs text-white">Bitcoin</span>
                     </div>
-                    <span className="text-xs text-orange-400 font-semibold">189.34M</span>
+                    <div className="text-right">
+                      <div className="text-xs text-orange-400 font-semibold">$0.00078</div>
+                      <div className="text-xs text-red-400 font-bold">-43.2%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
+                  <div className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #F97316, #FB923C)",
-                          border: "2px solid #F97316",
-                          boxShadow: "0 0 5px rgba(249, 115, 22, 0.5)",
-                        }}
-                      >
-                        <span className="text-black font-bold text-xs">E</span>
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
+                        <img
+                          src="/images/eth-alt.png"
+                          alt="Ethereum"
+                          className="w-full h-full object-cover"
+                          style={{ border: "4px solid #F97316", boxShadow: "0 0 7px rgba(249, 115, 22, 0.5)" }}
+                        />
                       </div>
                       <span className="text-xs text-white">Ethereum</span>
                     </div>
-                    <span className="text-xs text-orange-400 font-semibold">156.78M</span>
+                    <div className="text-right">
+                      <div className="text-xs text-orange-400 font-semibold">$0.00056</div>
+                      <div className="text-xs text-red-400 font-bold">-39.8%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
+                  <div className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #F97316, #FB923C)",
-                          border: "2px solid #F97316",
-                          boxShadow: "0 0 5px rgba(249, 115, 22, 0.5)",
-                        }}
-                      >
-                        <span className="text-black font-bold text-xs">S</span>
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
+                        <img
+                          src="/images/sol-alt.png"
+                          alt="Solana"
+                          className="w-full h-full object-cover"
+                          style={{ border: "4px solid #F97316", boxShadow: "0 0 7px rgba(249, 115, 22, 0.5)" }}
+                        />
                       </div>
                       <span className="text-xs text-white">Solana</span>
                     </div>
-                    <span className="text-xs text-orange-400 font-semibold">134.92M</span>
+                    <div className="text-right">
+                      <div className="text-xs text-orange-400 font-semibold">$0.00034</div>
+                      <div className="text-xs text-red-400 font-bold">-36.5%</div>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
+                  <div className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20">
                     <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(to bottom right, #F97316, #FB923C)",
-                          border: "2px solid #F97316",
-                          boxShadow: "0 0 5px rgba(249, 115, 22, 0.5)",
-                        }}
-                      >
-                        <span className="text-black font-bold text-xs">C</span>
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
+                        <img
+                          src="/images/ada-alt.png"
+                          alt="Cardano"
+                          className="w-full h-full object-cover"
+                          style={{ border: "4px solid #F97316", boxShadow: "0 0 7px rgba(249, 115, 22, 0.5)" }}
+                        />
                       </div>
                       <span className="text-xs text-white">Cardano</span>
                     </div>
-                    <span className="text-xs text-orange-400 font-semibold">98.45M</span>
+                    <div className="text-right">
+                      <div className="text-xs text-orange-400 font-semibold">$0.00012</div>
+                      <div className="text-xs text-red-400 font-bold">-32.1%</div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -1045,18 +1155,18 @@ export default function Component() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0 px-3 pb-3">
-                <div className="h-48 overflow-y-auto custom-scrollbar red-scroll space-y-2">
+                <div className="h-56 overflow-y-auto custom-scrollbar space-y-2">
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("Pepes Dog")}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
+                      <div className="w-10 h-10 rounded-full overflow-hidden">
                         <img
                           src="/images/pepesdog.png"
                           alt="Pepes Dog"
                           className="w-full h-full object-cover"
-                          style={{ border: "2px solid #EF4444", boxShadow: "0 0 5px rgba(239, 68, 68, 0.5)" }}
+                          style={{ border: "4px solid #EF4444", boxShadow: "0 0 7px rgba(239, 68, 68, 0.5)" }}
                         />
                       </div>
                       <span className="text-xs text-white">Pepes Dog</span>
@@ -1067,11 +1177,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("LUNA")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-red-400 shadow-lg shadow-red-500/30">
+                      <Avatar className="w-10 h-10 border border-red-400 shadow-lg shadow-red-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-red-400 to-red-600 text-xs text-black font-bold">
                           L
                         </AvatarFallback>
@@ -1084,11 +1194,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("FTT")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-red-400 shadow-lg shadow-red-500/30">
+                      <Avatar className="w-10 h-10 border border-red-400 shadow-lg shadow-red-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-red-400 to-red-600 text-xs text-black font-bold">
                           F
                         </AvatarFallback>
@@ -1101,11 +1211,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("SAFEMOON")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-red-400 shadow-lg shadow-red-500/30">
+                      <Avatar className="w-10 h-10 border border-red-400 shadow-lg shadow-red-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-red-400 to-red-600 text-xs text-black font-bold">
                           S
                         </AvatarFallback>
@@ -1118,11 +1228,11 @@ export default function Component() {
                     </div>
                   </div>
                   <div
-                    className="flex items-center justify-between p-1.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-red-500/10 to-transparent border border-red-500/20 cursor-pointer hover:bg-red-500/20 transition-all duration-200"
                     onClick={() => handleCoinClick("ICP")}
                   >
                     <div className="flex items-center gap-2">
-                      <Avatar className="w-6 h-6 border border-red-400 shadow-lg shadow-red-500/30">
+                      <Avatar className="w-10 h-10 border border-red-400 shadow-lg shadow-red-500/30">
                         <AvatarFallback className="bg-gradient-to-br from-red-400 to-red-600 text-xs text-black font-bold">
                           I
                         </AvatarFallback>
@@ -1833,209 +1943,32 @@ export default function Component() {
   transition: all 0.3s ease;
 }
 
-/* Custom Scrollbar Styles - Color Specific */
+/* Custom Scrollbar - Radix UI inspired */
 .custom-scrollbar {
   scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.5) rgba(0, 0, 0, 0.2);
 }
 
-/* Green scrollbar for Top Gainers */
-.custom-scrollbar.green-scroll {
-  scrollbar-color: rgba(34, 197, 94, 0.3) rgba(0, 0, 0, 0.1);
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-.custom-scrollbar.green-scroll::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  margin: 2px;
 }
 
-.custom-scrollbar.green-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgba(168, 85, 247, 0.5), rgba(139, 92, 246, 0.5));
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.15);
 }
 
-.custom-scrollbar.green-scroll::-webkit-scrollbar-thumb {
-  background: rgba(34, 197, 94, 0.3);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.custom-scrollbar.green-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 197, 94, 0.5);
-}
-
-/* Cyan scrollbar for Coin of the Day */
-.custom-scrollbar.cyan-scroll {
-  scrollbar-color: rgba(6, 182, 212, 0.3) rgba(0, 0, 0, 0.1);
-}
-
-.custom-scrollbar.cyan-scroll::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-.custom-scrollbar.cyan-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-}
-
-.custom-scrollbar.cyan-scroll::-webkit-scrollbar-thumb {
-  background: rgba(6, 182, 212, 0.3);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.custom-scrollbar.cyan-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(6, 182, 212, 0.5);
-}
-
-/* Indigo scrollbar for Hot Topics */
-.custom-scrollbar.indigo-scroll {
-  scrollbar-color: rgba(99, 102, 241, 0.3) rgba(0, 0, 0, 0.1);
-}
-
-.custom-scrollbar.indigo-scroll::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-.custom-scrollbar.indigo-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-}
-
-.custom-scrollbar.indigo-scroll::-webkit-scrollbar-thumb {
-  background: rgba(99, 102, 241, 0.3);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.custom-scrollbar.indigo-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.5);
-}
-
-/* Blue scrollbar for Momentum Gainers */
-.custom-scrollbar.blue-scroll {
-  scrollbar-color: rgba(59, 130, 246, 0.3) rgba(0, 0, 0, 0.1);
-}
-
-.custom-scrollbar.blue-scroll::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-.custom-scrollbar.blue-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-}
-
-.custom-scrollbar.blue-scroll::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.3);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.custom-scrollbar.blue-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.5);
-}
-
-/* Purple scrollbar for Holder Gainer */
-.custom-scrollbar.purple-scroll {
-  scrollbar-color: rgba(168, 85, 247, 0.3) rgba(0, 0, 0, 0.1);
-}
-
-.custom-scrollbar.purple-scroll::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-.custom-scrollbar.purple-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-}
-
-.custom-scrollbar.purple-scroll::-webkit-scrollbar-thumb {
-  background: rgba(168, 85, 247, 0.3);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.custom-scrollbar.purple-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(168, 85, 247, 0.5);
-}
-
-/* Yellow scrollbar for Hot <500K */
-.custom-scrollbar.orange-scroll {
-  scrollbar-color: rgba(249, 115, 22, 0.3) rgba(0, 0, 0, 0.1);
-}
-
-.custom-scrollbar.orange-scroll::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-.custom-scrollbar.orange-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-}
-
-.custom-scrollbar.orange-scroll::-webkit-scrollbar-thumb {
-  background: rgba(249, 115, 22, 0.3);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.custom-scrollbar.orange-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(249, 115, 22, 0.5);
-}
-
-/* Pink scrollbar for Hourly Performers */
-.custom-scrollbar.pink-scroll {
-  scrollbar-color: rgba(236, 72, 153, 0.3) rgba(0, 0, 0, 0.1);
-}
-
-.custom-scrollbar.pink-scroll::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-.custom-scrollbar.pink-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-}
-
-.custom-scrollbar.pink-scroll::-webkit-scrollbar-thumb {
-  background: rgba(236, 72, 153, 0.3);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.custom-scrollbar.pink-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(236, 72, 153, 0.5);
-}
-
-/* Red scrollbar for Worst Performers */
-.custom-scrollbar.red-scroll {
-  scrollbar-color: rgba(239, 68, 68, 0.3) rgba(0, 0, 0, 0.1);
-}
-
-.custom-scrollbar.red-scroll::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-.custom-scrollbar.red-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-}
-
-.custom-scrollbar.red-scroll::-webkit-scrollbar-thumb {
-  background: rgba(239, 68, 68, 0.3);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.custom-scrollbar.red-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(239, 68, 68, 0.5);
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgba(168, 85, 247, 0.7), rgba(139, 92, 246, 0.7));
 }
 
 .custom-scrollbar::-webkit-scrollbar-corner {
